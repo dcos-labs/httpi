@@ -1,0 +1,17 @@
+{
+  "id": "httpi",
+  "networks": [ { "mode": "host" } ],
+  "portDefinitions": [
+      {"port": 0, "name": "http"}
+  ],
+  "container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "yankcrime/httpi:latest",
+      "forcePullImage": true
+    }
+  },
+  "instances": 1,
+  "cpus": 0.1,
+  "mem": 32
+}
