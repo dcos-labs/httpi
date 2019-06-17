@@ -1,33 +1,30 @@
 {
   "id": "/httpi",
+  "cpus": 0.1,
+  "instances": 5,
+  "mem": 32,
+  "networks": [ { "mode": "container/bridge" } ],
+  "requirePorts": false,
   "container": {
-    "type": "DOCKER",
-    "docker": {
-      "forcePullImage": true,
-      "image": "yankcrime/httpi:latest",
-      "parameters": [],
-      "privileged": false
-    },
     "portMappings": [
       {
-        "containerPort": 3141,
+        "containerPort": 0,
         "hostPort": 0,
         "labels": {
           "VIP_0": "/httpi:3141"
         },
-        "name": "httpi",
         "protocol": "tcp",
-        "servicePort": 10101
+        "servicePort": 10000,
+        "name": "http"
       }
-    ]
-  },
-  "cpus": 0.1,
-  "mem": 32,
-  "instances": 3,
-  "labels": {
-    "HAPROXY_GROUP": "external",
-    "HAPROXY_0_PORT": "3141",
-    "HAPROXY_0_MODE": "http"
-  },
-  "networks": [{ "mode": "container/bridge" }]
+    ],
+    "type": "DOCKER",
+    "volumes": [],
+    "docker": {
+      "image": "yankcrime/httpi:latest",
+      "forcePullImage": true,
+      "privileged": false,
+      "parameters": []
+    }
+  }
 }
