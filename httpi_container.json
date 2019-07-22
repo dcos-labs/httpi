@@ -1,0 +1,34 @@
+{
+  "id": "/httpi",
+  "cpus": 0.1,
+  "instances": 5,
+  "mem": 32,
+  "networks": [ { "mode": "container", "name": "dcos" } ],
+  "requirePorts": false,
+  "labels":{
+    "HAPROXY_GROUP": "external",
+    "HAPROXY_0_MODE": "http",
+    "HAPROXY_0_PORT": "3141"
+  },
+  "container": {
+    "portMappings": [
+      {
+        "containerPort": 3141,
+        "hostPort": 0,
+        "labels": {
+          "VIP_0": "/httpi:3141"
+        },
+        "protocol": "tcp",
+        "name": "http"
+      }
+    ],
+    "type": "DOCKER",
+    "volumes": [],
+    "docker": {
+      "image": "yankcrime/httpi:latest",
+      "forcePullImage": true,
+      "privileged": false,
+      "parameters": []
+    }
+  }
+}
