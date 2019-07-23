@@ -8,13 +8,10 @@
   "container": {
     "portMappings": [
       {
-        "containerPort": 0,
-        "hostPort": 0,
         "labels": {
           "VIP_0": "/httpi:3141"
         },
         "protocol": "tcp",
-        "servicePort": 10000,
         "name": "http"
       }
     ],

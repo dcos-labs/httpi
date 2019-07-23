@@ -14,7 +14,6 @@
     "portMappings": [
       {
         "containerPort": 3141,
-        "hostPort": 0,
         "labels": {
           "VIP_0": "/httpi:3141"
         },
