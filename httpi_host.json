@@ -7,7 +7,7 @@
   "container": {
     "type": "DOCKER",
     "docker": {
-      "image": "yankcrime/httpi:latest",
+      "image": "dcoslabs/httpi:latest",
       "forcePullImage": true
     }
   },

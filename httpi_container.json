@@ -24,7 +24,7 @@
     "type": "DOCKER",
     "volumes": [],
     "docker": {
-      "image": "yankcrime/httpi:latest",
+      "image": "dcoslabs/httpi:latest",
       "forcePullImage": true,
       "privileged": false,
       "parameters": []
